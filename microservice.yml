@@ -44,7 +44,7 @@ actions:
         message-count:
           help: The number of message count
           type: int
-        message:
+        messages:
           help: The object of send message response with status, message-id, to, remaining-balance, message-price, network.
           type: object
 environment:
