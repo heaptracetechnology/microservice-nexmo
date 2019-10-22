@@ -46,7 +46,24 @@ actions:
           type: string
         messages:
           help: The object of send message response with status, message-id, to, remaining-balance, message-price, network.
-          type: object
+          type: list
+          #list:
+            #elements:
+              #properties:
+                #to:
+                  #type: string
+                #message-id:
+                  #type: string
+                #status:
+                  #type: string
+                #remaining-balance:
+                  #type: string
+                #message-price:
+                  #type: string
+                #network:
+                  #type: string
+                #account-ref:
+                  #type: string
 environment:
   API_KEY:
     type: string
