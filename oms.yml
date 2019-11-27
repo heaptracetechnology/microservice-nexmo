@@ -1,18 +1,19 @@
-omg: 1
-lifecycle:
-  startup:
-    command: ["microservice-nexmo"]
+oms: 1
 info:
   version: 1.0.0
   title: nexmo
   description: This is a nexmo service
   contact:
-    name: Rohit Shetty
-    url: https://github.com/ht68rohit
-    email: rohits@heaptrace.com
+    name: Open Microservices
+    url: 'https://openmicroservices.org'
+    email: core@openmicroservices.org
   license:
     name: MIT
-    url: https://opensource.org/licenses/MIT
+    url: 'https://opensource.org/licenses/MIT'
+lifecycle:
+  startup:
+    command:
+      - microservice-nexmo
 actions:
   send:
     help: Send SMS
@@ -22,17 +23,17 @@ actions:
       path: /send
       contentType: application/json
     arguments:
-      from: 
+      from:
         type: string
         in: requestBody
         required: true
         help: The sender phone number.
-      to: 
+      to:
         type: string
         in: requestBody
         required: true
         help: The receiver phone number.
-      text: 
+      text:
         type: string
         in: requestBody
         required: true
@@ -45,25 +46,10 @@ actions:
           help: The number of message count
           type: string
         messages:
-          help: The object of send message response with status, message-id, to, remaining-balance, message-price, network.
+          help: >-
+            The object of send message response with status, message-id, to,
+            remaining-balance, message-price, network.
           type: list
-          #list:
-            #elements:
-              #properties:
-                #to:
-                  #type: string
-                #message-id:
-                  #type: string
-                #status:
-                  #type: string
-                #remaining-balance:
-                  #type: string
-                #message-price:
-                  #type: string
-                #network:
-                  #type: string
-                #account-ref:
-                  #type: string
 environment:
   API_KEY:
     type: string
